@@ -9,8 +9,9 @@ require('dotenv').config();
 const port = process.env.PORT || 3003;
 
 const methodOverride=require('method-override');
-
+const pokemonData=require('./utilities/pokemonData');
 //connect mongoose database
+//DB connection
 mongoose.connect(process.env.MONGO_URI);
 mongoose.connection.once('open',()=>{
     console.log('Connected to mongo');
@@ -28,6 +29,16 @@ app.engine('jsx',require('express-react-views').createEngine());
 
 //data
 const Pokemon = require("./models/Pokemon");
+
+//seed route
+app.get('/pokemon/seed',(req,res)=>{
+    //Comment the line below if you don't want to delete your whole entire collection
+    // Pokemon.deleteMany({});--> not working for right now
+    //Create a list of pokemon on our database
+    Pokemon.create(pokemonData);
+    res.redirect('/pokemon');
+
+});
 
 //routes
 //index
