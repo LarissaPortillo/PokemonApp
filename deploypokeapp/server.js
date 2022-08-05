@@ -31,11 +31,12 @@ app.engine('jsx',require('express-react-views').createEngine());
 const Pokemon = require("./models/Pokemon");
 
 //seed route
-app.get('/pokemon/seed',(req,res)=>{
+//delete many is async so have to make callback function async
+app.get('/pokemon/seed', async (req,res)=>{
     //Comment the line below if you don't want to delete your whole entire collection
-    // Pokemon.deleteMany({});--> not working for right now
+    await Pokemon.deleteMany({});
     //Create a list of pokemon on our database
-    Pokemon.create(pokemonData);
+    await Pokemon.create(pokemonData);
     res.redirect('/pokemon');
 
 });
