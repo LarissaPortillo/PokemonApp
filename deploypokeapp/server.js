@@ -20,7 +20,7 @@ mongoose.connection.once('open',()=>{
 //middleware
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
-
+app.use(express.static('public'));
 //set views
 app.set('view engine','jsx');
 

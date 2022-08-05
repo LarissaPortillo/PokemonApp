@@ -1,0 +1,18 @@
+
+body{
+    text-align: center;
+}
+.pokeLI{
+    display: flex;
+    justify-content: space-between;
+    width:fit-content;
+    margin-left:45%
+}
+.trash{
+    cursor: pointer;
+    border:none;
+    background-color: white;
+}
+li{
+    padding:4px;
+}

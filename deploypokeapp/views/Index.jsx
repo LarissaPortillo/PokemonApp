@@ -9,6 +9,7 @@ class Index extends React.Component{
                 <meta charSet="UTF-8" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="stylesheet" href="/css/index.css"></link>
                 <title>Pokemon Index</title>
             </head>
             <body>
@@ -16,20 +17,19 @@ class Index extends React.Component{
                 <ul>
                     {pokemon.map((p)=>{
                             return(
-                            <li>
-                                <a href={`/pokemon/${p.id}`}>{p.name.charAt(0).toUpperCase()+p.name.slice(1).toLowerCase()}</a>
-                                <br></br>
+                            <li className='pokeLI'>
+                                <a href={`/pokemon/${p.id}`}>{p.name.charAt(0).toUpperCase()+p.name.slice(1).toLowerCase()}  </a>
                                 <form action={`/pokemon/${p.id}?_method=DELETE`} method='POST'>
-                                    <button type='submit'>Delete</button>
+                                    <button type='submit' className='trash'><i className="fa-solid fa-trash-can fa-lg"></i></button>
                                 </form>
-                                <a href={`/pokemon/${p.id}/edit`}>Edit Pokemon</a>
+                                <a href={`/pokemon/${p.id}/edit`}><i className="fa-solid fa-pen-to-square fa-lg" type='submit'></i></a>
                             </li>
-                        
                             );
                         }
                     )}
                 </ul> 
                 <nav><a href='/pokemon/new'>Create a New Pokemon</a></nav>
+                <script src="https://kit.fontawesome.com/398a8dbccf.js" crossorigin="anonymous"></script>
             </body>
             </html>
         );
