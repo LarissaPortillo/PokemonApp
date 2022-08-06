@@ -20,9 +20,9 @@ class Index extends React.Component{
                             <li className='pokeLI'>
                                 <a href={`/pokemon/${p.id}`}>{p.name.charAt(0).toUpperCase()+p.name.slice(1).toLowerCase()}  </a>
                                 <form action={`/pokemon/${p.id}?_method=DELETE`} method='POST'>
-                                    <button type='submit' className='trash'><i className="fa-solid fa-trash-can fa-lg"></i></button>
+                                    <button title={`Delete ${p.name.toLowerCase()}`} type='submit' className='trash'><i className="fa-solid fa-trash-can fa-lg"></i></button>
                                 </form>
-                                <a href={`/pokemon/${p.id}/edit`}><i className="fa-solid fa-pen-to-square fa-lg" type='submit'></i></a>
+                                <a href={`/pokemon/${p.id}/edit`}><i title={`Edit ${p.name.toLowerCase()}`} className="fa-solid fa-pen-to-square fa-lg" type='submit'></i></a>
                             </li>
                             );
                         }

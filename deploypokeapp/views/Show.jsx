@@ -170,11 +170,11 @@ class Show extends React.Component{
                 <div className='bttn'>
                 <form action={`/pokemon/${pokemon.id}?_method=DELETE`} method='POST'>
                     
-                     <button class='trash' type='submit'><i className="fa-solid fa-trash-can fa-lg"></i></button>
+                     <button title={`Delete ${pokemon.name.toLowerCase()}`} class='trash' type='submit'><i className="fa-solid fa-trash-can fa-lg"></i></button>
                 </form>
                
                 <a href={`/pokemon/${pokemon.id}/edit`}>
-                    <i className="fa-solid fa-pen-to-square fa-lg" type='submit'></i>
+                    <i title={`Edit ${pokemon.name.toLowerCase()}`} className="fa-solid fa-pen-to-square fa-lg" type='submit'></i>
                 </a>
                 </div>
 
