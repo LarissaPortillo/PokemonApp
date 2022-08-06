@@ -1,3 +1,6 @@
+// images of pokeball taken from https://www.moddb.com/members/senluc/images/pokball
+//https://www.youtube.com/watch?v=RqUIxQLDRo0 reference for the retrieving and showing poke ball
+//https://www.youtube.com/watch?v=DteTHc3zcMM reference for wobble animation
 const React = require('react');
 
 class Show extends React.Component{

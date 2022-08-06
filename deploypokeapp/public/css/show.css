@@ -1,18 +1,20 @@
 body{
-    text-align: center;
+    text-align:center;
 }
 
 .trash{
-    cursor: pointer;
+    cursor:pointer;
     border:none;
-    background-color: white;
+    background-color:white;
 }
+
 .bttn{
     margin-left:47%;
-    width: 6vw;
-    display: flex;
-    justify-content: space-between;
+    width:6vw;
+    display:flex;
+    justify-content:space-between;
 }
+
 .hidden{
     position:absolute;
     top:-1px;
@@ -28,6 +30,7 @@ body{
     align-items:center;
     justify-content:center;
 }
+
  .pokeball{
     min-width:30vh;
     width:30vh;
@@ -41,25 +44,36 @@ body{
 #toggle-button{
     height:20vh;
     width:auto;
-}
-#toggle-button:hover{
-    cursor:pointer;
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
+    transform-origin:50% 100%; 
+    animation:wobble 4.5s infinite;
 }
 
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+#toggle-button:hover{
+    cursor:pointer;
+}
+
+@keyframes wobble {
+    0%,
+    20%,
+    24%,
+    28%,
+    80%,
+    84%,
+    88%,
+    92%,
+    100%{
+        transform:rotate(0deg);
+    }
+    22%,
+    82%,
+    90% {
+        transform:rotate(4deg);
+    }
+    26%,
+    86%,
+    94%{
+        transform:rotate(-4deg);
+    }
 }
 
 .pokemon{
@@ -67,12 +81,14 @@ body{
     text-align:center;
     margin-left:60px
 }
+
 .pokemon img{
     width:55vh;
-    background-size: 30vh 30vh;
+    background-size:30vh 30vh;
     background-repeat:no-repeat; 
     background-position:50% 90%;
 }
+
 .summon{
     position:absolute
 }

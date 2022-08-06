@@ -22,6 +22,8 @@
                 const poke = document.querySelector('#toggle-button');
                 poke.style.height='35vh'
                 poke.src='/pics/pokeopen.png';
+                poke.style.transformOrigin='none'; 
+                poke.style.animation='none';
             },
             onComplete : function(){
                 document.querySelector(".summon").classList.add('hidden');
@@ -85,6 +87,8 @@
                 const poke = document.querySelector('#toggle-button');
                 poke.style.height='20vh'
                 poke.src='/pics/pokeclose.png';
+                poke.style.transformOrigin='50% 100%'; 
+                poke.style.animation='wobble 5s infinite';
                 document.querySelector(".summon").classList.add('hidden');
                 document.querySelector(".summon").style.filter="none";
                 document.querySelector(".pokemon img").style.filter="none";
